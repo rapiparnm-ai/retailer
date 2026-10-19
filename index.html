@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แบบฟอร์มแจ้งเปลี่ยนแปลงข้อมูลตัวแทนจำหน่าย | บริษัท บี.กริม แคเรียร์ ประจำปี 2027</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts: Prompt -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+
+  <div class="max-w-3xl mx-auto space-y-6">
+
+    <!-- Header Section -->
+    <header class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 sm:p-8 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500"></div>
+      
+      <!-- Check Retailer Link Banner -->
+      <div class="mb-5 inline-block">
+        <a href="https://carrierthailand.com/find-a-retailer/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs sm:text-sm font-medium rounded-full border border-blue-200 transition-colors shadow-sm group">
+          <i data-lucide="search" class="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform"></i>
+          <span>ตรวจสอบรายชื่อตัวแทนจำหน่ายได้ที่นี่</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-70"></i>
+        </a>
+      </div>
+
+      <h1 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
+        แบบฟอร์มแจ้งเปลี่ยนแปลงข้อมูลตัวแทนจำหน่าย<br>
+        บริษัท บี.กริม แคเรียร์ ประจำปี 2027
+      </h1>
+      
+      <p class="mt-3 text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
+        กรุณากรอกข้อมูลให้ครบถ้วนเพื่อดำเนินการอัปเดตระบบฐานข้อมูล<br>
+        หากทำการแก้ไขแล้ว จะแจ้งให้ทราบทาง Email ของท่าน
+      </p>
+    </header>
+
+    <!-- Main Form -->
+    <form id="dealerForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+
+      <!-- Section 1: Sales Department Info -->
+      <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 sm:p-8">
+        <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h2 class="text-base sm:text-lg font-bold text-slate-900">ข้อมูลผู้แจ้ง (ฝ่ายขาย)</h2>
+            <p class="text-xs text-slate-500">เพื่อให้ทราบว่าใครเป็นผู้ดำเนินการ และสามารถติดต่อกลับได้หากข้อมูลมีปัญหา</p>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          <!-- Sales Dropdown -->
+          <div>
+            <label for="salesName" class="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">
+              ชื่อ-นามสกุล ผู้แจ้ง (ฝ่ายขาย) <span class="text-rose-500">*</span>
+            </label>
+            <select id="salesName" required onchange="toggleCustomSalesInput()" class="w-full px-4 py-2.5 text-xs sm:text-sm bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+              <option value="" disabled selected>-- เลือกรายชื่อฝ่ายขาย --</option>
+              <option value="นุชนาฎ ศรีสงคราม">1. นุชนาฎ ศรีสงคราม</option>
+              <option value="ปิยะฉัตร กิจตระกูลรัตน์">2. ปิยะฉัตร กิจตระกูลรัตน์</option>
+              <option value="สุวิดา เพ็ชร์ยาหน">3. สุวิดา เพ็ชร์ยาหน</option>
+              <option value="พรพิไล ศรีตลาลัย">4. พรพิไล ศรีตลาลัย</option>
+              <option value="วีรยา บุญบรรดารสุข">5. วีรยา บุญบรรดารสุข</option>
+              <option value="รจนา โชติสิงห์">6. รจนา โชติสิงห์</option>
+              <option value="หัสยา รังษีวงศ์">7. หัสยา รังษีวงศ์</option>
+              <option value="ชัญญา ละไมจิตรา">8. ชัญญา ละไมจิตรา</option>
+              <option value="เพลินตา แสวานี">9. เพลินตา แสวานี</option>
+              <option value="กฤษฎา โชตินันท์">10. กฤษฎา โชตินันท์</option>
+              <option value="ภูมิ เอกนิตยบุญ">11. ภูมิ เอกนิตยบุญ</option>
+              <option value="กฤษฎา ศุภกุล">12. กฤษฎา ศุภกุล</option>
+              <option value="ชายฉัตร กาญจนกันติ">13. ชายฉัตร กาญจนกันติ</option>
+              <option value="ธนาวุฒิ ศรีสว่าง">14. ธนาวุฒิ ศรีสว่าง</option>
+              <option value="ณัฐภัทร ประเสริฐธีระชัย">15. ณัฐภัทร ประเสริฐธีระชัย</option>
+              <option value="กุลธิดา โสภณจิตต์">16. กุลธิดา โสภณจิตต์</option>
+              <option value="other">อื่นๆ (ระบุชื่อเอง)</option>
+            </select>
+          </div>
+
+          <!-- Custom Sales Name Input (Hidden by default) -->
+          <div id="customSalesContainer" class="hidden">
+            <label for="customSalesName" class="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">
+              ระบุชื่อ-นามสกุล ผู้แจ้ง <span class="text-rose-500">*</span>
+            </label>
+            <input type="text" id="customSalesName" placeholder="กรอกชื่อ-นามสกุล ของท่าน" class="w-full px-4 py-2.5 text-xs sm:text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+          </div>
+
+          <!-- Purpose Selection -->
+          <div>
+            <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-3">
+              จุดประสงค์ของการแจ้ง <span class="text-rose-500">*</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="relative flex items-center p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors group">
+                <input type="radio" name="purpose" value="add" required onchange="handlePurposeChange()" class="w-4 h-4 text-blue-600 focus:ring-blue-500">
+                <span class="ml-3 text-xs sm:text-sm font-medium text-slate-700 group-hover:text-slate-900">เพิ่มตัวแทนจำหน่ายใหม่</span>
+              </label>
+
+              <label class="relative flex items-center p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors group">
