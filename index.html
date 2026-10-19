@@ -886,12 +886,13 @@
 
       try {
         if (webhookUrl) {
-          // ยิงเข้า Google Apps Script Web App
+          // ใช้ Content-Type เป็น text/plain เพื่อป้องกัน CORS Preflight (OPTIONS request) 
+          // ซึ่ง Google Apps Script จะสามารถอ่านได้ผ่าน e.postData.contents ตามปกติ
           await fetch(webhookUrl, {
             method: 'POST',
-            mode: 'no-cors', // Apps script standard endpoint requirement
+            mode: 'no-cors',
             headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'text/plain;charset=utf-8',
             },
             body: JSON.stringify(payload)
           });
