@@ -591,33 +591,6 @@
         </div>
       </section>
 
-      <!-- Webhook / Google Script URL Setting (Accordion) -->
-      <section class="bg-slate-100 rounded-2xl p-4 sm:p-5 border border-slate-200">
-        <details class="group">
-          <summary class="flex justify-between items-center cursor-pointer list-none text-slate-700 hover:text-slate-900 select-none">
-            <div class="flex items-center gap-2">
-              <i data-lucide="settings-2" class="w-5 h-5 text-slate-500"></i>
-              <span class="text-sm font-semibold">การเชื่อมต่อ Google Sheets Webhook</span>
-            </div>
-            <span class="text-xs bg-white px-2.5 py-1 rounded-full border border-slate-200 text-slate-600 group-open:rotate-180 transition-transform">
-              <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
-            </span>
-          </summary>
-          <div class="mt-4 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-600 space-y-3">
-            <p>วาง Google Apps Script Web App URL เพื่อส่งข้อมูลตรงไปยัง Google Sheet ของคุณ:</p>
-            <input 
-              type="url" 
-              id="sheetWebhookUrl" 
-              placeholder="https://script.google.com/macros/s/AKfycbx.../exec" 
-              class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono bg-white"
-            >
-            <p class="text-xs text-slate-500">
-              * หากปล่อยว่างไว้ ระบบจะจำลองการบันทึกสำเร็จและแสดงตัวอย่างข้อมูล JSON ให้ทันทีเพื่อทดสอบหน้าจอ
-            </p>
-          </div>
-        </details>
-      </section>
-
       <!-- Submit Buttons -->
       <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
         <button 
@@ -882,7 +855,8 @@
         </svg> กำลังส่งข้อมูล...
       `;
 
-      const webhookUrl = document.getElementById('sheetWebhookUrl').value.trim();
+      // กำหนด Google Apps Script Web App URL ไว้ภายในระบบโดยตรง
+      const webhookUrl = "https://script.google.com/macros/s/AKfycbw_xB-ZRFRSv6SJQhM7OkvM5_ZR5DBzBtarVyot_hEHdndtp-VodVBiGPdwW4xrQu7b/exec";
 
       try {
         if (webhookUrl) {
