@@ -1,115 +1,1000 @@
-<!DOCTYPE html>
+<index html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>แบบฟอร์มแจ้งเปลี่ยนแปลงข้อมูลตัวแทนจำหน่าย | บริษัท บี.กริม แคเรียร์ ประจำปี 2027</title>
-
-  <!-- Tailwind CSS CDN -->
+  <title>ระบบแจ้งเปลี่ยนแปลงข้อมูลตัวแทนจำหน่าย</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Google Fonts: Prompt -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body {
       font-family: 'Prompt', sans-serif;
     }
+    .fade-in {
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+<body class="bg-slate-50 text-slate-800 min-h-screen py-8 px-4 sm:px-6 lg:px-8 selection:bg-blue-500 selection:text-white">
 
-  <div class="max-w-3xl mx-auto space-y-6">
-
-    <!-- Header Section -->
-    <header class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 sm:p-8 text-center relative overflow-hidden">
-      <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500"></div>
-      
-      <!-- Check Retailer Link Banner -->
-      <div class="mb-5 inline-block">
-        <a href="https://carrierthailand.com/find-a-retailer/" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs sm:text-sm font-medium rounded-full border border-blue-200 transition-colors shadow-sm group">
-          <i data-lucide="search" class="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform"></i>
-          <span>ตรวจสอบรายชื่อตัวแทนจำหน่ายได้ที่นี่</span>
-          <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-70"></i>
-        </a>
+  <!-- Main Container -->
+  <main class="max-w-3xl mx-auto">
+    
+    <header class="bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 rounded-3xl p-6 sm:p-8 text-white shadow-xl shadow-blue-900/10 mb-8 relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute right-12 top-6 text-white/10 pointer-events-none">
+        <i data-lucide="store" class="w-32 h-32"></i>
       </div>
-
-      <h1 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
-        แบบฟอร์มแจ้งเปลี่ยนแปลงข้อมูลตัวแทนจำหน่าย<br>
-        บริษัท บี.กริม แคเรียร์ ประจำปี 2027
-      </h1>
       
-      <p class="mt-3 text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
-        กรุณากรอกข้อมูลให้ครบถ้วนเพื่อดำเนินการอัปเดตระบบฐานข้อมูล<br>
-        หากทำการแก้ไขแล้ว จะแจ้งให้ทราบทาง Email ของท่าน
-      </p>
+      <div class="relative z-10">
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2 leading-snug">
+          แบบฟอร์มแจ้งเปลี่ยนแปลงข้อมูลตัวแทนจำหน่าย<br>
+          บริษัท บี.กริม แคเรียร์ ประจำปี 2027
+        </h1>
+        <p class="text-blue-100 text-sm sm:text-base font-normal max-w-xl mb-4 leading-relaxed">
+          กรุณากรอกข้อมูลให้ครบถ้วนเพื่อดำเนินการอัปเดตระบบฐานข้อมูล<br>
+          หากทำการแก้ไขแล้ว จะแจ้งให้ทราบทาง Email ของท่าน
+        </p>
+
+        <!-- ตรวจสอบรายชื่อตัวแทนจำหน่าย Carrier Link -->
+        <div class="inline-flex items-center">
+          <a 
+            href="https://carrierthailand.com/find-a-retailer/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 backdrop-blur-md text-white text-xs sm:text-sm font-medium transition-all shadow-sm border border-white/25 hover:border-white/40 group"
+          >
+            <i data-lucide="search" class="w-4 h-4 text-amber-300"></i>
+            <span>ตรวจสอบรายชื่อตัวแทนจำหน่ายปัจจุบันได้ที่นี่</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform"></i>
+          </a>
+        </div>
+      </div>
     </header>
 
-    <!-- Main Form -->
-    <form id="dealerForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+    <!-- Form Element -->
+    <form id="dealerForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
 
-      <!-- Section 1: Sales Department Info -->
-      <section class="bg-white rounded-2xl shadow-sm border border-slate-200/80 p-6 sm:p-8">
+      <!-- ==============================================
+           ส่วนที่ 1: ข้อมูลผู้แจ้ง (ฝ่ายขาย)
+      =============================================== -->
+      <section class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200/80 transition-all hover:shadow-md">
         <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-6">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg">1</div>
+          <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg">
+            1
+          </div>
           <div>
-            <h2 class="text-base sm:text-lg font-bold text-slate-900">ข้อมูลผู้แจ้ง (ฝ่ายขาย)</h2>
-            <p class="text-xs text-slate-500">เพื่อให้ทราบว่าใครเป็นผู้ดำเนินการ และสามารถติดต่อกลับได้หากข้อมูลมีปัญหา</p>
+            <h2 class="text-lg font-bold text-slate-900">ข้อมูลผู้แจ้ง (ฝ่ายขาย)</h2>
+            <p class="text-xs sm:text-sm text-slate-500">ระบุผู้ประสานงานเพื่อให้ทีมงานติดต่อกลับกรณีมีข้อมูลคลาดเคลื่อน</p>
           </div>
         </div>
 
         <div class="space-y-5">
-          <!-- Sales Dropdown -->
+          <!-- ชื่อ-นามสกุล ฝ่ายขาย Dropdown -->
           <div>
-            <label for="salesName" class="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">
-              ชื่อ-นามสกุล ผู้แจ้ง (ฝ่ายขาย) <span class="text-rose-500">*</span>
+            <label for="reporterSelect" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              ชื่อ - นามสกุล ผู้แจ้ง (ฝ่ายขาย) <span class="text-rose-500">*</span>
             </label>
-            <select id="salesName" required onchange="toggleCustomSalesInput()" class="w-full px-4 py-2.5 text-xs sm:text-sm bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
-              <option value="" disabled selected>-- เลือกรายชื่อฝ่ายขาย --</option>
-              <option value="นุชนาฎ ศรีสงคราม">1. นุชนาฎ ศรีสงคราม</option>
-              <option value="ปิยะฉัตร กิจตระกูลรัตน์">2. ปิยะฉัตร กิจตระกูลรัตน์</option>
-              <option value="สุวิดา เพ็ชร์ยาหน">3. สุวิดา เพ็ชร์ยาหน</option>
-              <option value="พรพิไล ศรีตลาลัย">4. พรพิไล ศรีตลาลัย</option>
-              <option value="วีรยา บุญบรรดารสุข">5. วีรยา บุญบรรดารสุข</option>
-              <option value="รจนา โชติสิงห์">6. รจนา โชติสิงห์</option>
-              <option value="หัสยา รังษีวงศ์">7. หัสยา รังษีวงศ์</option>
-              <option value="ชัญญา ละไมจิตรา">8. ชัญญา ละไมจิตรา</option>
-              <option value="เพลินตา แสวานี">9. เพลินตา แสวานี</option>
-              <option value="กฤษฎา โชตินันท์">10. กฤษฎา โชตินันท์</option>
-              <option value="ภูมิ เอกนิตยบุญ">11. ภูมิ เอกนิตยบุญ</option>
-              <option value="กฤษฎา ศุภกุล">12. กฤษฎา ศุภกุล</option>
-              <option value="ชายฉัตร กาญจนกันติ">13. ชายฉัตร กาญจนกันติ</option>
-              <option value="ธนาวุฒิ ศรีสว่าง">14. ธนาวุฒิ ศรีสว่าง</option>
-              <option value="ณัฐภัทร ประเสริฐธีระชัย">15. ณัฐภัทร ประเสริฐธีระชัย</option>
-              <option value="กุลธิดา โสภณจิตต์">16. กุลธิดา โสภณจิตต์</option>
-              <option value="other">อื่นๆ (ระบุชื่อเอง)</option>
-            </select>
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <select 
+                id="reporterSelect" 
+                name="reporterSelect" 
+                required 
+                onchange="handleReporterChange(this.value)"
+                class="block w-full pl-11 pr-10 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm sm:text-base appearance-none cursor-pointer"
+              >
+                <option value="" disabled selected>-- เลือกรายชื่อฝ่ายขาย --</option>
+                <option value="นุชนาฎ ศรีสงคราม">1. นุชนาฎ ศรีสงคราม</option>
+                <option value="ปิยะฉัตร กิจตระกูลรัตน์">2. ปิยะฉัตร กิจตระกูลรัตน์</option>
+                <option value="สุวิดา เพ็ชร์ยาหน">3. สุวิดา เพ็ชร์ยาหน</option>
+                <option value="พรพิไล ศรีตลาลัย">4. พรพิไล ศรีตลาลัย</option>
+                <option value="วีรยา บุญบรรดารสุข">5. วีรยา บุญบรรดารสุข</option>
+                <option value="รจนา โชติสิงห์">6. รจนา โชติสิงห์</option>
+                <option value="หัสยา รังษีวงศ์">7. หัสยา รังษีวงศ์</option>
+                <option value="ชัญญา ละไมจิตรา">8. ชัญญา ละไมจิตรา</option>
+                <option value="เพลินตา แสวานี">9. เพลินตา แสวานี</option>
+                <option value="กฤษฎา โชตินันท์">10. กฤษฎา โชตินันท์</option>
+                <option value="ภูมิ เอกนิตยบุญ">11. ภูมิ เอกนิตยบุญ</option>
+                <option value="กฤษฎา ศุภกุล">12. กฤษฎา ศุภกุล</option>
+                <option value="ชายฉัตร กาญจนกันติ">13. ชายฉัตร กาญจนกันติ</option>
+                <option value="ธนาวุฒิ ศรีสว่าง">14. ธนาวุฒิ ศรีสว่าง</option>
+                <option value="ณัฐภัทร ประเสริฐธีระชัย">15. ณัฐภัทร ประเสริฐธีระชัย</option>
+                <option value="กุลธิดา โสภณจิตต์">16. กุลธิดา โสภณจิตต์</option>
+                <option value="อื่นๆ">อื่นๆ (ระบุชื่อเอง)</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-slate-500">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </div>
+            </div>
           </div>
 
-          <!-- Custom Sales Name Input (Hidden by default) -->
-          <div id="customSalesContainer" class="hidden">
-            <label for="customSalesName" class="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">
-              ระบุชื่อ-นามสกุล ผู้แจ้ง <span class="text-rose-500">*</span>
+          <!-- ช่องกรอกชื่อเพิ่มเติมกรณีเลือก อื่นๆ -->
+          <div id="otherReporterBox" class="hidden fade-in">
+            <label for="reporterOtherName" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              ระบุ ชื่อ - นามสกุล ผู้แจ้ง <span class="text-rose-500">*</span>
             </label>
-            <input type="text" id="customSalesName" placeholder="กรอกชื่อ-นามสกุล ของท่าน" class="w-full px-4 py-2.5 text-xs sm:text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="edit-3" class="w-5 h-5"></i>
+              </div>
+              <input 
+                type="text" 
+                id="reporterOtherName" 
+                name="reporterOtherName" 
+                placeholder="ระบุชื่อและนามสกุลของคุณ" 
+                class="block w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm sm:text-base"
+              >
+            </div>
           </div>
 
-          <!-- Purpose Selection -->
+          <!-- จุดประสงค์ของการแจ้ง -->
           <div>
-            <label class="block text-xs sm:text-sm font-semibold text-slate-700 mb-3">
-              จุดประสงค์ของการแจ้ง <span class="text-rose-500">*</span>
-            </label>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <label class="relative flex items-center p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors group">
-                <input type="radio" name="purpose" value="add" required onchange="handlePurposeChange()" class="w-4 h-4 text-blue-600 focus:ring-blue-500">
-                <span class="ml-3 text-xs sm:text-sm font-medium text-slate-700 group-hover:text-slate-900">เพิ่มตัวแทนจำหน่ายใหม่</span>
+            <div class="flex items-center justify-between mb-3">
+              <label class="block text-sm font-semibold text-slate-800">
+                จุดประสงค์ของการแจ้ง <span class="text-rose-500">*</span>
+              </label>
+              <span class="text-xs text-slate-400 font-normal">เลือกอย่างใดอย่างหนึ่ง</span>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
+              
+              <!-- Option 1: เพิ่มตัวแทนจำหน่ายใหม่ (Emerald Theme) -->
+              <label class="group relative flex flex-col justify-between p-4 sm:p-5 rounded-2xl border-2 cursor-pointer transition-all duration-300 select-none bg-white border-slate-200/90 hover:border-emerald-300 hover:shadow-md hover:-translate-y-0.5 has-[:checked]:border-emerald-500 has-[:checked]:bg-gradient-to-b has-[:checked]:from-emerald-50/80 has-[:checked]:to-white has-[:checked]:shadow-xl has-[:checked]:shadow-emerald-500/15 has-[:checked]:ring-4 has-[:checked]:ring-emerald-400/20 has-[:checked]:scale-[1.02] overflow-hidden">
+                <input 
+                  type="radio" 
+                  name="purpose" 
+                  value="add" 
+                  required 
+                  class="sr-only peer" 
+                  onchange="handlePurposeChange('add')"
+                >
+                <!-- Selection Accent Line -->
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-500 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                
+                <div>
+                  <div class="flex items-center justify-between mb-3.5">
+                    <!-- Icon Box -->
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-100 text-emerald-600 peer-checked:bg-emerald-600 peer-checked:text-white peer-checked:shadow-lg peer-checked:shadow-emerald-600/30 peer-checked:border-emerald-500 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                      <i data-lucide="user-plus" class="w-6 h-6"></i>
+                    </div>
+
+                    <!-- Badge Tag & Radio Indicator -->
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full bg-emerald-100/70 text-emerald-700 peer-checked:bg-emerald-600 peer-checked:text-white transition-colors">
+                        เพิ่มข้อมูล
+                      </span>
+                      <div class="relative flex items-center justify-center">
+                        <span class="absolute w-5 h-5 rounded-full bg-emerald-400 opacity-0 peer-checked:animate-ping peer-checked:opacity-75"></span>
+                        <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-emerald-600 peer-checked:bg-emerald-600 flex items-center justify-center transition-all duration-300 shadow-xs">
+                          <i data-lucide="check" class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 stroke-[3] transition-opacity"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 class="font-bold text-slate-800 peer-checked:text-emerald-950 text-base leading-snug transition-colors flex items-center gap-1.5">
+                    <span>เพิ่มตัวแทนใหม่</span>
+                  </h3>
+                  <p class="text-xs text-slate-500 peer-checked:text-emerald-800/80 mt-1 leading-relaxed transition-colors">
+                    ขึ้นทะเบียนร้านค้าใหม่เข้าสู่ระบบ พร้อมบันทึกพิกัดหน้าร้าน
+                  </p>
+                </div>
               </label>
 
-              <label class="relative flex items-center p-3.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors group">
+              <!-- Option 2: แก้ไขข้อมูลเดิม (Amber / Orange Theme) -->
+              <label class="group relative flex flex-col justify-between p-4 sm:p-5 rounded-2xl border-2 cursor-pointer transition-all duration-300 select-none bg-white border-slate-200/90 hover:border-amber-300 hover:shadow-md hover:-translate-y-0.5 has-[:checked]:border-amber-500 has-[:checked]:bg-gradient-to-b has-[:checked]:from-amber-50/80 has-[:checked]:to-white has-[:checked]:shadow-xl has-[:checked]:shadow-amber-500/15 has-[:checked]:ring-4 has-[:checked]:ring-amber-400/20 has-[:checked]:scale-[1.02] overflow-hidden">
+                <input 
+                  type="radio" 
+                  name="purpose" 
+                  value="edit" 
+                  class="sr-only peer" 
+                  onchange="handlePurposeChange('edit')"
+                >
+                <!-- Selection Accent Line -->
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-amber-400 to-orange-500 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+
+                <div>
+                  <div class="flex items-center justify-between mb-3.5">
+                    <!-- Icon Box -->
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-100 text-amber-600 peer-checked:bg-amber-600 peer-checked:text-white peer-checked:shadow-lg peer-checked:shadow-amber-600/30 peer-checked:border-amber-500 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                      <i data-lucide="file-edit" class="w-6 h-6"></i>
+                    </div>
+
+                    <!-- Badge Tag & Radio Indicator -->
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full bg-amber-100/70 text-amber-700 peer-checked:bg-amber-600 peer-checked:text-white transition-colors">
+                        อัปเดตข้อมูล
+                      </span>
+                      <div class="relative flex items-center justify-center">
+                        <span class="absolute w-5 h-5 rounded-full bg-amber-400 opacity-0 peer-checked:animate-ping peer-checked:opacity-75"></span>
+                        <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-amber-600 peer-checked:bg-amber-600 flex items-center justify-center transition-all duration-300 shadow-xs">
+                          <i data-lucide="check" class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 stroke-[3] transition-opacity"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 class="font-bold text-slate-800 peer-checked:text-amber-950 text-base leading-snug transition-colors flex items-center gap-1.5">
+                    <span>แก้ไขข้อมูลเดิม</span>
+                  </h3>
+                  <p class="text-xs text-slate-500 peer-checked:text-amber-800/80 mt-1 leading-relaxed transition-colors">
+                    อัปเดตเบอร์ติดต่อ, ที่อยู่ หรือแก้ไขพิกัดหมุดแผนที่
+                  </p>
+                </div>
+              </label>
+
+              <!-- Option 3: ยกเลิก / ลบตัวแทน (Rose / Crimson Theme) -->
+              <label class="group relative flex flex-col justify-between p-4 sm:p-5 rounded-2xl border-2 cursor-pointer transition-all duration-300 select-none bg-white border-slate-200/90 hover:border-rose-300 hover:shadow-md hover:-translate-y-0.5 has-[:checked]:border-rose-500 has-[:checked]:bg-gradient-to-b has-[:checked]:from-rose-50/80 has-[:checked]:to-white has-[:checked]:shadow-xl has-[:checked]:shadow-rose-500/15 has-[:checked]:ring-4 has-[:checked]:ring-rose-400/20 has-[:checked]:scale-[1.02] overflow-hidden">
+                <input 
+                  type="radio" 
+                  name="purpose" 
+                  value="remove" 
+                  class="sr-only peer" 
+                  onchange="handlePurposeChange('remove')"
+                >
+                <!-- Selection Accent Line -->
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-rose-500 to-red-600 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+
+                <div>
+                  <div class="flex items-center justify-between mb-3.5">
+                    <!-- Icon Box -->
+                    <div class="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-100 text-rose-600 peer-checked:bg-rose-600 peer-checked:text-white peer-checked:shadow-lg peer-checked:shadow-rose-600/30 peer-checked:border-rose-500 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                      <i data-lucide="user-x" class="w-6 h-6"></i>
+                    </div>
+
+                    <!-- Badge Tag & Radio Indicator -->
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full bg-rose-100/70 text-rose-700 peer-checked:bg-rose-600 peer-checked:text-white transition-colors">
+                        ลบข้อมูล
+                      </span>
+                      <div class="relative flex items-center justify-center">
+                        <span class="absolute w-5 h-5 rounded-full bg-rose-400 opacity-0 peer-checked:animate-ping peer-checked:opacity-75"></span>
+                        <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-rose-600 peer-checked:bg-rose-600 flex items-center justify-center transition-all duration-300 shadow-xs">
+                          <i data-lucide="check" class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 stroke-[3] transition-opacity"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 class="font-bold text-slate-800 peer-checked:text-rose-950 text-base leading-snug transition-colors flex items-center gap-1">
+                    <span>ต้องการ</span>
+                    <span class="text-rose-600 font-extrabold underline decoration-rose-300 underline-offset-2">"ลบ/ยกเลิก"</span>
+                  </h3>
+                  <p class="text-xs text-slate-500 peer-checked:text-rose-800/80 mt-1 leading-relaxed transition-colors">
+                    ปิดกิจการ หรือระงับสถานะตัวแทนจำหน่ายออกจากระบบ
+                  </p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           ส่วนที่ 2: สำหรับ "เพิ่ม" ตัวแทนจำหน่ายใหม่
+      =============================================== -->
+      <section id="sectionAdd" class="hidden bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-emerald-200 fade-in">
+        <div class="flex items-center gap-3 border-b border-emerald-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">
+            2
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              ข้อมูลสำหรับ <span class="text-emerald-600">"เพิ่ม"</span> ตัวแทนจำหน่ายใหม่
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500">กรุณากรอกข้อมูลนิติบุคคลหรือร้านค้าเพื่อเปิดรหัสตัวแทนจำหน่าย</p>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          <!-- ชื่อร้านค้า / บริษัท -->
+          <div>
+            <label for="addDealerName" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              ชื่อร้านค้า / บริษัท (ตัวแทนจำหน่าย) <span class="text-rose-500">*</span>
+            </label>
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="building-2" class="w-5 h-5"></i>
+              </div>
+              <input 
+                type="text" 
+                id="addDealerName" 
+                name="addDealerName" 
+                placeholder="เช่น หจก. สยามเทรดดิ้ง หรือ ร้านเจริญพาณิชย์" 
+                class="block w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
+              >
+            </div>
+          </div>
+
+          <!-- เบอร์โทรศัพท์ 1 & 2 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- เบอร์โทรหลัก (บังคับ) -->
+            <div>
+              <label for="addPhone1" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                เบอร์โทรหลัก <span class="text-rose-500">*</span>
+              </label>
+              <div class="relative rounded-xl shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <input 
+                  type="tel" 
+                  id="addPhone1" 
+                  name="addPhone1" 
+                  placeholder="เช่น 02-xxx-xxxx หรือ 081-xxx-xxxx" 
+                  class="block w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
+                >
+              </div>
+            </div>
+
+            <!-- เบอร์โทรสำรอง (ไม่บังคับ) -->
+            <div>
+              <label for="addPhone2" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                เบอร์โทรสำรอง <span class="text-xs font-normal text-slate-500">(ไม่บังคับ)</span>
+              </label>
+              <div class="relative rounded-xl shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                  <i data-lucide="phone-call" class="w-5 h-5"></i>
+                </div>
+                <input 
+                  type="tel" 
+                  id="addPhone2" 
+                  name="addPhone2" 
+                  placeholder="เช่น 089-xxx-xxxx (ถ้ามี)" 
+                  class="block w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ที่อยู่ร้านค้า -->
+          <div>
+            <label for="addAddress" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              ที่อยู่ร้านค้า <span class="text-rose-500">*</span>
+            </label>
+            <div class="relative rounded-xl shadow-sm">
+              <textarea 
+                id="addAddress" 
+                name="addAddress" 
+                rows="3" 
+                placeholder="ระบุเลขที่, อาคาร, ซอย, ถนน, ตำบล/แขวง, อำเภอ/เขต, จังหวัด และรหัสไปรษณีย์" 
+                class="block w-full p-3.5 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Link Google Map (บังคับตอบ) -->
+          <div>
+            <label for="addMapUrl" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              Link Google Map <span class="text-rose-500">*</span>
+            </label>
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <input 
+                type="url" 
+                id="addMapUrl" 
+                name="addMapUrl" 
+                placeholder="เช่น https://maps.app.goo.gl/xxxxxx หรือ https://goo.gl/maps/xxxxxx" 
+                class="block w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
+              >
+            </div>
+            <p class="text-xs text-slate-500 mt-1">คัดลอกลิงก์แชร์ตำแหน่งจาก Google Maps เพื่อความแม่นยำในการปักหมุดหน้าร้าน</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           ส่วนที่ 3: สำหรับ "แก้ไข" ข้อมูลตัวแทนจำหน่าย
+      =============================================== -->
+      <section id="sectionEdit" class="hidden bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-amber-200 fade-in">
+        <div class="flex items-center gap-3 border-b border-amber-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">
+            3
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              ข้อมูลสำหรับ <span class="text-amber-600">"แก้ไข"</span> ข้อมูลตัวแทนจำหน่าย
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500">ระบุชื่อร้านเดิมและหัวข้อที่ต้องการเปลี่ยนแปลง</p>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          <!-- ชื่อร้านค้าเดิมที่ต้องการแก้ไข -->
+          <div>
+            <label for="editDealerName" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              ชื่อร้านค้า / บริษัท ที่ต้องการแก้ไข <span class="text-rose-500">*</span>
+            </label>
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="store" class="w-5 h-5"></i>
+              </div>
+              <input 
+                type="text" 
+                id="editDealerName" 
+                name="editDealerName" 
+                placeholder="ระบุชื่อร้านค้าเดิมที่มีอยู่ในระบบ" 
+                class="block w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm sm:text-base"
+              >
+            </div>
+          </div>
+
+          <!-- ข้อมูลที่ต้องการแก้ไข (Checkboxes) -->
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">
+              ข้อมูลที่ต้องการแก้ไข <span class="text-rose-500">*</span> <span class="text-xs font-normal text-slate-500">(เลือกได้หลายข้อ)</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 bg-slate-50 p-4 rounded-xl border border-slate-200">
+              
+              <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white hover:shadow-xs transition cursor-pointer select-none">
+                <input type="checkbox" name="editFields" value="ชื่อร้าน / บริษัท" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                <span class="text-sm font-medium text-slate-700">ชื่อร้าน / บริษัท</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white hover:shadow-xs transition cursor-pointer select-none">
+                <input type="checkbox" name="editFields" value="ที่อยู่" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                <span class="text-sm font-medium text-slate-700">ที่อยู่</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white hover:shadow-xs transition cursor-pointer select-none">
+                <input type="checkbox" name="editFields" value="เบอร์โทร" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                <span class="text-sm font-medium text-slate-700">เบอร์โทร</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white hover:shadow-xs transition cursor-pointer select-none">
+                <input type="checkbox" name="editFields" value="Link Google Map (พิกัดร้าน)" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                <span class="text-sm font-medium text-slate-700">Link Google Map (พิกัดร้าน)</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white hover:shadow-xs transition cursor-pointer select-none sm:col-span-2">
+                <input type="checkbox" id="editFieldOtherCheck" name="editFields" value="อื่นๆ" class="w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500" onchange="toggleOtherEditField(this)">
+                <span class="text-sm font-medium text-slate-700">อื่นๆ</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- รายละเอียดข้อมูลใหม่ที่ต้องการแก้ไข -->
+          <div>
+            <label for="editDetail" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              รายละเอียดข้อมูลใหม่ที่ต้องการให้เปลี่ยนแปลง <span class="text-rose-500">*</span>
+            </label>
+            <textarea 
+              id="editDetail" 
+              name="editDetail" 
+              rows="3" 
+              placeholder="เช่น เปลี่ยนเบอร์โทรศัพท์ใหม่เป็น 089-111-2222, เพิ่ม Link Google Map: https://maps.app.goo.gl/..." 
+              class="block w-full p-3.5 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm sm:text-base"
+            ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           ส่วนที่ 4: สำหรับ "ลบ / ยกเลิก" ตัวแทนจำหน่าย
+      =============================================== -->
+      <section id="sectionRemove" class="hidden bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-rose-200 fade-in">
+        <div class="flex items-center gap-3 border-b border-rose-100 pb-4 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-lg">
+            4
+          </div>
+          <div>
+            <h2 class="text-lg font-bold">
+              <span class="text-slate-900">ข้อมูล ตัวแทนจำหน่าย ที่ต้องการ</span> <span class="text-rose-600">"ลบ / ยกเลิก"</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500">บันทึกประวัติการยกเลิกสัญญาหรือระงับการจัดส่ง</p>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          <!-- ชื่อร้านค้า / บริษัท ที่ต้องการยกเลิก -->
+          <div>
+            <label for="removeDealerName" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              ชื่อร้านค้า / บริษัท ที่ต้องการยกเลิก <span class="text-rose-500">*</span>
+            </label>
+            <div class="relative rounded-xl shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="store" class="w-5 h-5"></i>
+              </div>
+              <input 
+                type="text" 
+                id="removeDealerName" 
+                name="removeDealerName" 
+                placeholder="ระบุชื่อร้านค้าที่ต้องการยกเลิกสถานะ" 
+                class="block w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-sm sm:text-base"
+              >
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- สาเหตุที่ยกเลิก (Dropdown + Custom) -->
+            <div>
+              <label for="removeReasonSelect" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                สาเหตุที่ยกเลิก <span class="text-rose-500">*</span>
+              </label>
+              <div class="relative rounded-xl shadow-sm">
+                <select 
+                  id="removeReasonSelect" 
+                  name="removeReasonSelect" 
+                  onchange="handleReasonChange(this.value)"
+                  class="block w-full px-3.5 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-sm sm:text-base appearance-none cursor-pointer"
+                >
+                  <option value="" disabled selected>-- เลือกสาเหตุที่ยกเลิก --</option>
+                  <option value="ปิดกิจการ / เลิกดำเนินธุรกิจ">ปิดกิจการ / เลิกดำเนินธุรกิจ</option>
+                  <option value="ผิดเงื่อนไขสัญญา / ชำระเงินล่าช้า">ผิดเงื่อนไขสัญญา / ชำระเงินล่าช้า</option>
+                  <option value="ย้ายที่อยู่ / ออกนอกพื้นที่บริการ">ย้ายที่อยู่ / ออกนอกพื้นที่บริการ</option>
+                  <option value="ยอดขายไม่ถึงเป้าตามเกณฑ์">ยอดขายไม่ถึงเป้าตามเกณฑ์</option>
+                  <option value="ขอยกเลิกเองตามความประสงค์ของร้าน">ขอยกเลิกเองตามความประสงค์ของร้าน</option>
+                  <option value="อื่นๆ">อื่นๆ (ระบุเพิ่มเติมด้านล่าง)</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+                  <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- วันที่มีผลยกเลิก -->
+            <div>
+              <label for="removeEffectiveDate" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                วันที่มีผลยกเลิก <span class="text-rose-500">*</span>
+              </label>
+              <div class="relative rounded-xl shadow-sm">
+                <input 
+                  type="date" 
+                  id="removeEffectiveDate" 
+                  name="removeEffectiveDate" 
+                  class="block w-full px-3.5 py-3 rounded-xl border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-sm sm:text-base"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ช่องกรอกเหตุผลเพิ่มเติม (ถ้าเลือกอื่นๆ) -->
+          <div id="otherReasonBox" class="hidden fade-in">
+            <label for="removeReasonDetail" class="block text-sm font-semibold text-slate-700 mb-1.5">
+              ระบุรายละเอียดสาเหตุเพิ่มเติม <span class="text-rose-500">*</span>
+            </label>
+            <textarea 
+              id="removeReasonDetail" 
+              name="removeReasonDetail" 
+              rows="2" 
+              placeholder="โปรดระบุรายละเอียดเหตุผลการยกเลิก..." 
+              class="block w-full p-3.5 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-sm sm:text-base"
+            ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Webhook / Google Script URL Setting (Accordion) -->
+      <section class="bg-slate-100 rounded-2xl p-4 sm:p-5 border border-slate-200">
+        <details class="group">
+          <summary class="flex justify-between items-center cursor-pointer list-none text-slate-700 hover:text-slate-900 select-none">
+            <div class="flex items-center gap-2">
+              <i data-lucide="settings-2" class="w-5 h-5 text-slate-500"></i>
+              <span class="text-sm font-semibold">การเชื่อมต่อ Google Sheets Webhook</span>
+            </div>
+            <span class="text-xs bg-white px-2.5 py-1 rounded-full border border-slate-200 text-slate-600 group-open:rotate-180 transition-transform">
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+            </span>
+          </summary>
+          <div class="mt-4 pt-3 border-t border-slate-200 text-xs sm:text-sm text-slate-600 space-y-3">
+            <p>วาง Google Apps Script Web App URL เพื่อส่งข้อมูลตรงไปยัง Google Sheet ของคุณ:</p>
+            <input 
+              type="url" 
+              id="sheetWebhookUrl" 
+              placeholder="https://script.google.com/macros/s/AKfycbx.../exec" 
+              class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono bg-white"
+            >
+            <p class="text-xs text-slate-500">
+              * หากปล่อยว่างไว้ ระบบจะจำลองการบันทึกสำเร็จและแสดงตัวอย่างข้อมูล JSON ให้ทันทีเพื่อทดสอบหน้าจอ
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <!-- Submit Buttons -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+        <button 
+          type="submit" 
+          id="submitButton"
+          class="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-base shadow-lg shadow-blue-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <i data-lucide="send" class="w-5 h-5"></i>
+          <span>ส่งข้อมูลบันทึกลงระบบ</span>
+        </button>
+
+        <button 
+          type="button" 
+          onclick="resetFormWithConfirmation()" 
+          class="w-full sm:w-auto py-3.5 px-6 rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 font-semibold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <i data-lucide="rotate-ccw" class="w-4 h-4"></i> ล้างข้อมูล
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- ==============================================
+       Modal Notification / Feedback
+  =============================================== -->
+  <div id="feedbackModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs fade-in">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 transform transition-all">
+      <div id="modalIconContainer" class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <!-- Injected via JS -->
+      </div>
+      <h3 id="modalTitle" class="text-xl font-bold text-center text-slate-900 mb-2"></h3>
+      <p id="modalMessage" class="text-sm text-center text-slate-600 mb-5"></p>
+      
+      <!-- Preview Log Box (for testing) -->
+      <div id="modalPayloadContainer" class="hidden mb-4">
+        <p class="text-xs font-semibold text-slate-500 mb-1">ข้อมูลที่จัดส่ง (JSON Payload):</p>
+        <pre id="modalPayloadText" class="text-[11px] p-3 rounded-lg bg-slate-900 text-emerald-400 overflow-x-auto max-h-40 custom-scrollbar font-mono"></pre>
+      </div>
+
+      <div class="flex gap-3">
+        <button 
+          type="button" 
+          id="modalCloseBtn"
+          onclick="closeModal()" 
+          class="w-full py-2.5 px-4 rounded-xl font-semibold text-sm transition bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
+        >
+          ตกลง
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal for Reset -->
+  <div id="confirmResetModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs fade-in">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-100">
+      <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-lg font-bold text-center text-slate-900 mb-1">ยืนยันการล้างข้อมูล?</h3>
+      <p class="text-xs text-center text-slate-500 mb-5">ข้อมูลทั้งหมดที่กรอกไว้ในฟอร์มจะถูกรีเซ็ตกลับเป็นค่าเริ่มต้น</p>
+      <div class="flex gap-2">
+        <button 
+          type="button" 
+          onclick="closeConfirmResetModal()" 
+          class="flex-1 py-2 px-3 rounded-lg text-slate-600 hover:bg-slate-100 text-sm font-medium transition"
+        >
+          ยกเลิก
+        </button>
+        <button 
+          type="button" 
+          onclick="confirmResetAction()" 
+          class="flex-1 py-2 px-3 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium transition shadow-sm"
+        >
+          ล้างข้อมูล
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+
+    let currentPurpose = null;
+
+    /**
+     * สลับการแสดงผล Section 2, 3, 4 ตามตัวเลือก Purpose
+     */
+    function handlePurposeChange(purpose) {
+      currentPurpose = purpose;
+
+      const secAdd = document.getElementById('sectionAdd');
+      const secEdit = document.getElementById('sectionEdit');
+      const secRemove = document.getElementById('sectionRemove');
+
+      // Hide all first
+      secAdd.classList.add('hidden');
+      secEdit.classList.add('hidden');
+      secRemove.classList.add('hidden');
+
+      // Reset dynamic required attributes
+      setFieldRequired(secAdd, false);
+      setFieldRequired(secEdit, false);
+      setFieldRequired(secRemove, false);
+
+      if (purpose === 'add') {
+        secAdd.classList.remove('hidden');
+        document.getElementById('addDealerName').required = true;
+        document.getElementById('addPhone1').required = true;
+        document.getElementById('addPhone2').required = false;
+        document.getElementById('addAddress').required = true;
+        document.getElementById('addMapUrl').required = true;
+      } else if (purpose === 'edit') {
+        secEdit.classList.remove('hidden');
+        document.getElementById('editDealerName').required = true;
+        document.getElementById('editDetail').required = true;
+      } else if (purpose === 'remove') {
+        secRemove.classList.remove('hidden');
+        document.getElementById('removeDealerName').required = true;
+        document.getElementById('removeReasonSelect').required = true;
+        document.getElementById('removeEffectiveDate').required = true;
+      }
+
+      // Re-trigger icon rendering
+      setTimeout(() => lucide.createIcons(), 50);
+    }
+
+    /**
+     * Helper สำหรับเปิด/ปิด required บน inputs ใน section
+     */
+    function setFieldRequired(container, isRequired) {
+      const inputs = container.querySelectorAll('input, select, textarea');
+      inputs.forEach(el => {
+        if (!isRequired) {
+          el.required = false;
+        }
+      });
+    }
+
+    /**
+     * สลับการแสดงช่องกรอกชื่อฝ่ายขายกรณีเลือก "อื่นๆ"
+     */
+    function handleReporterChange(value) {
+      const otherBox = document.getElementById('otherReporterBox');
+      const otherInput = document.getElementById('reporterOtherName');
+      if (value === 'อื่นๆ') {
+        otherBox.classList.remove('hidden');
+        otherInput.required = true;
+        otherInput.focus();
+      } else {
+        otherBox.classList.add('hidden');
+        otherInput.required = false;
+      }
+    }
+
+    /**
+     * Toggle กล่องเหตุผลเพิ่มเติมใน Section 4
+     */
+    function handleReasonChange(value) {
+      const otherBox = document.getElementById('otherReasonBox');
+      const otherInput = document.getElementById('removeReasonDetail');
+      if (value === 'อื่นๆ') {
+        otherBox.classList.remove('hidden');
+        otherInput.required = true;
+      } else {
+        otherBox.classList.add('hidden');
+        otherInput.required = false;
+      }
+    }
+
+    /**
+     * Toggle Checkbox อื่นๆ ใน Section 3
+     */
+    function toggleOtherEditField(checkbox) {
+      const editDetail = document.getElementById('editDetail');
+      if (checkbox.checked && !editDetail.value) {
+        editDetail.focus();
+      }
+    }
+
+    /**
+     * Form Validation และส่งข้อมูล
+     */
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+
+      if (!currentPurpose) {
+        showModal('error', 'กรุณาเลือกจุดประสงค์', 'โปรดเลือกจุดประสงค์ของการแจ้ง (เพิ่ม / แก้ไข / ยกเลิก)');
+        return;
+      }
+
+      // ดึงชื่อฝ่ายขาย (ตรวจสอบกรณีเลือก "อื่นๆ")
+      const reporterSelect = document.getElementById('reporterSelect').value;
+      let reporterName = reporterSelect;
+      if (reporterSelect === 'อื่นๆ') {
+        const otherName = document.getElementById('reporterOtherName').value.trim();
+        if (!otherName) {
+          showModal('warning', 'กรุณากรอกชื่อผู้แจ้ง', 'เนื่องจากท่านเลือก "อื่นๆ" โปรดระบุชื่อ-นามสกุลของคุณ');
+          return;
+        }
+        reporterName = `อื่นๆ: ${otherName}`;
+      }
+
+      // Validation พิเศษสำหรับ Section 3: Checkbox อย่างน้อย 1 ข้อ
+      if (currentPurpose === 'edit') {
+        const checkedBoxes = document.querySelectorAll('input[name="editFields"]:checked');
+        if (checkedBoxes.length === 0) {
+          showModal('warning', 'กรุณาระบุหัวข้อที่ต้องการแก้ไข', 'โปรดเลือกอย่างน้อย 1 รายการในช่อง "ข้อมูลที่ต้องการแก้ไข"');
+          return;
+        }
+      }
+
+      // รวบรวมข้อมูล
+      const timestamp = new Date().toLocaleString('th-TH');
+
+      const payload = {
+        timestamp: timestamp,
+        reporterName: reporterName,
+        purpose: currentPurpose,
+        purposeLabel: getPurposeLabel(currentPurpose),
+        dealerName: '',
+        phone1: '-',
+        phone2: '-',
+        address: '-',
+        mapUrl: '-',
+        editFields: '-',
+        editDetail: '-',
+        removeReason: '-',
+        effectiveDate: '-'
+      };
+
+      if (currentPurpose === 'add') {
+        payload.dealerName = document.getElementById('addDealerName').value.trim();
+        payload.phone1 = document.getElementById('addPhone1').value.trim();
+        payload.phone2 = document.getElementById('addPhone2').value.trim() || '-';
+        payload.address = document.getElementById('addAddress').value.trim();
+        payload.mapUrl = document.getElementById('addMapUrl').value.trim();
+      } else if (currentPurpose === 'edit') {
+        payload.dealerName = document.getElementById('editDealerName').value.trim();
+        const checkedFields = Array.from(document.querySelectorAll('input[name="editFields"]:checked')).map(cb => cb.value);
+        payload.editFields = checkedFields.join(', ');
+        payload.editDetail = document.getElementById('editDetail').value.trim();
+      } else if (currentPurpose === 'remove') {
+        payload.dealerName = document.getElementById('removeDealerName').value.trim();
+        const reasonSelect = document.getElementById('removeReasonSelect').value;
+        const reasonDetail = document.getElementById('removeReasonDetail').value.trim();
+        payload.removeReason = reasonSelect === 'อื่นๆ' ? `อื่นๆ: ${reasonDetail}` : reasonSelect;
+        payload.effectiveDate = document.getElementById('removeEffectiveDate').value;
+      }
+
+      // สถานะปุ่มกำลังส่ง
+      const submitBtn = document.getElementById('submitButton');
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg> กำลังส่งข้อมูล...
+      `;
+
+      const webhookUrl = document.getElementById('sheetWebhookUrl').value.trim();
+
+      try {
+        if (webhookUrl) {
+          // ยิงเข้า Google Apps Script Web App
+          await fetch(webhookUrl, {
+            method: 'POST',
+            mode: 'no-cors', // Apps script standard endpoint requirement
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+          });
+          
+          showModal('success', 'บันทึกข้อมูลเรียบร้อย!', 'ข้อมูลถูกส่งเข้าสู่ระบบและบันทึกลงใน Google Sheet แล้ว', payload);
+          resetFormFields();
+        } else {
+          // Simulation Mode หากยังไม่ได้ใส่ Webhook
+          setTimeout(() => {
+            showModal(
+              'success', 
+              'บันทึกข้อมูลสำเร็จ (โหมดจำลอง)', 
+              'ระบบทำการตรวจเช็กและรวบรวมชุดข้อมูลเรียบร้อย (คุณสามารถนำ Webhook URL ของ Google Sheets มาใส่ในส่วนการตั้งค่าด้านล่างเพื่อบันทึกจริง)',
+              payload
+            );
+            resetFormFields();
+          }, 600);
+        }
+      } catch (error) {
+        showModal('error', 'เกิดข้อผิดพลาดในการเชื่อมต่อ', 'ไม่สามารถส่งข้อมูลได้ กรุณาตรวจสอบ URL หรือการเชื่อมต่ออินเทอร์เน็ต');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+        lucide.createIcons();
+      }
+    }
+
+    function getPurposeLabel(purpose) {
+      switch (purpose) {
+        case 'add': return 'เพิ่มตัวแทนจำหน่ายใหม่';
+        case 'edit': return 'แก้ไขข้อมูลตัวแทนจำหน่ายเดิม';
+        case 'remove': return 'ข้อมูล ตัวแทนจำหน่าย ที่ต้องการ "ลบ / ยกเลิก"';
+        default: return purpose;
+      }
+    }
+
+    /**
+     * จัดการ Modal แสดงผล
+     */
+    function showModal(type, title, message, payload = null) {
+      const modal = document.getElementById('feedbackModal');
+      const iconContainer = document.getElementById('modalIconContainer');
+      const titleEl = document.getElementById('modalTitle');
+      const msgEl = document.getElementById('modalMessage');
+      const payloadBox = document.getElementById('modalPayloadContainer');
+      const payloadText = document.getElementById('modalPayloadText');
+      const closeBtn = document.getElementById('modalCloseBtn');
+
+      if (type === 'success') {
+        iconContainer.className = 'w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 bg-emerald-100 text-emerald-600';
+        iconContainer.innerHTML = '<i data-lucide="check-circle-2" class="w-8 h-8"></i>';
+        closeBtn.className = 'w-full py-2.5 px-4 rounded-xl font-semibold text-sm transition bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer';
+      } else if (type === 'warning') {
+        iconContainer.className = 'w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 bg-amber-100 text-amber-600';
+        iconContainer.innerHTML = '<i data-lucide="alert-circle" class="w-8 h-8"></i>';
+        closeBtn.className = 'w-full py-2.5 px-4 rounded-xl font-semibold text-sm transition bg-amber-600 hover:bg-amber-700 text-white cursor-pointer';
+      } else {
+        iconContainer.className = 'w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 bg-rose-100 text-rose-600';
+        iconContainer.innerHTML = '<i data-lucide="x-circle" class="w-8 h-8"></i>';
+        closeBtn.className = 'w-full py-2.5 px-4 rounded-xl font-semibold text-sm transition bg-rose-600 hover:bg-rose-700 text-white cursor-pointer';
+      }
+
+      titleEl.textContent = title;
+      msgEl.textContent = message;
+
+      if (payload) {
+        payloadBox.classList.remove('hidden');
+        payloadText.textContent = JSON.stringify(payload, null, 2);
+      } else {
+        payloadBox.classList.add('hidden');
+      }
+
+      modal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('feedbackModal').classList.add('hidden');
+    }
+
+    function resetFormWithConfirmation() {
+      document.getElementById('confirmResetModal').classList.remove('hidden');
+    }
+
+    function closeConfirmResetModal() {
+      document.getElementById('confirmResetModal').classList.add('hidden');
+    }
+
+    function confirmResetAction() {
+      resetFormFields();
+      closeConfirmResetModal();
+    }
+
+    function resetFormFields() {
+      document.getElementById('dealerForm').reset();
+      currentPurpose = null;
+      document.getElementById('sectionAdd').classList.add('hidden');
+      document.getElementById('sectionEdit').classList.add('hidden');
+      document.getElementById('sectionRemove').classList.add('hidden');
+      document.getElementById('otherReasonBox').classList.add('hidden');
+      document.getElementById('otherReporterBox').classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
